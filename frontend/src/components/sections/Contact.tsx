@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import axios from 'axios';
 import { theme } from '../../styles/theme';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
@@ -242,13 +243,19 @@ const Contact = () => {
     setStatus(null);
 
     try {
-      const response = await axios.post('/api/contact', formData);
-      if (response.status === 200) {
-        setStatus({ type: 'success', message: 'Thank you for your message! I\'ll get back to you soon.' });
-        setFormData({ name: '', email: '', message: '' });
-      }
+      const result = await emailjs.send(
+        'service_85876ch',   // <- replace with your EmailJS service ID
+        'template_irg2yyb',  // <- replace with your EmailJS template ID
+        formData,            // sends { name, email, message }
+        'elqP6Dd3HrrYQjQnq'    // <- replace with your EmailJS public key
+      );
+
+      console.log('Email sent:', result.text);
+
+      setStatus({ type: 'success', message: 'Thank you for your message! I\'ll get back to you soon.' });
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Error sending message:', error);
       setStatus({ type: 'error', message: 'Sorry, there was an error sending your message. Please try again.' });
     } finally {
       setIsSubmitting(false);

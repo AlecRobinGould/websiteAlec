@@ -2,23 +2,41 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - name: Install dependencies
-        run: npm install
+
+      # Install frontend dependencies
+      - name: Install frontend dependencies
+        run: npm install --prefix frontend
+
+      # Build frontend
       - name: Build frontend
-        run: npm run build:frontend
-      - name: Build backend
-        run: npm run build:backend
+        run: npm run build --prefix frontend
+
+      # Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Install backend dependencies
+      - name: Install backend dependencies
+        run: pip install -r backend/requirements.txt
+
+      # Test backend syntax
+      - name: Backend syntax check
+        run: python -m py_compile backend/app.py

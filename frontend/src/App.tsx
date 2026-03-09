@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'; // <-- CHANGE HERE
 import { Layout } from './components/layout/Layout';
 import { Hero } from './components/sections/Hero';
 import { GlobalStyles } from './styles/GlobalStyles';
@@ -29,19 +30,20 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Layout>
-        <Hero />
-
-        <Suspense fallback={<LoadingFallback>Loading projects...</LoadingFallback>}>
-          <Projects />
-        </Suspense>
-        <Suspense fallback={<LoadingFallback>Loading skills...</LoadingFallback>}>
-          <Skills />
-        </Suspense>
-        <Suspense fallback={<LoadingFallback>Loading contact...</LoadingFallback>}>
-          <Contact />
-        </Suspense>
-      </Layout>
+      <Router> {/* <-- Wrap everything in HashRouter */}
+        <Layout>
+          <Hero />
+          <Suspense fallback={<LoadingFallback>Loading projects...</LoadingFallback>}>
+            <Projects />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback>Loading skills...</LoadingFallback>}>
+            <Skills />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback>Loading contact...</LoadingFallback>}>
+            <Contact />
+          </Suspense>
+        </Layout>
+      </Router>
     </ThemeProvider>
   );
 }

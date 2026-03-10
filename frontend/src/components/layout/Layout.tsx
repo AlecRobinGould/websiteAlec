@@ -216,7 +216,7 @@ export const Layout = ({ children }: LayoutProps) => {
 
       <Footer role="contentinfo">
         <div className="container">
-          <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Alec Robin Gould. All rights reserved.</p>
         </div>
       </Footer>
     </LayoutWrapper>

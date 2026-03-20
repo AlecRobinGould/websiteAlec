@@ -199,7 +199,7 @@ const projects = [
     id: 3,
     title: 'ESP NOW auto pairing library',
     description: 'An open source library for ESP 32s to automatically pair with each other using ESP NOW, without the need to explicitly share MAC addresses.',
-    image: 'https://github.com/AlecRobinGould/AntennasQRcodes/assets/95220293/0d21113d-6da1-42b5-a5d2-a89590468e24',
+    image: 'https://github.com/user-attachments/assets/f57d68f4-200b-4f6b-91c8-d227503e8de8',
     techStack: ['C++', 'ESP32', 'ESP NOW', 'IOT', 'WiFi'],
     githubUrl: 'https://github.com/AlecRobinGould/esp_now_auto_pairing',
     liveUrl: 'https://github.com/AlecRobinGould/esp_now_auto_pairing.git/',

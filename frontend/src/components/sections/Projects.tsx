@@ -197,6 +197,15 @@ const projects = [
   },
   {
     id: 3,
+    title: 'ESP NOW auto pairing library',
+    description: 'An open source library for ESP 32s to automatically pair with each other using ESP NOW, without the need to explicitly share MAC addresses.',
+    image: 'https://github.com/AlecRobinGould/AntennasQRcodes/assets/95220293/0d21113d-6da1-42b5-a5d2-a89590468e24',
+    techStack: ['C++', 'ESP32', 'ESP NOW', 'IOT', 'WiFi'],
+    githubUrl: 'https://github.com/AlecRobinGould/esp_now_auto_pairing',
+    liveUrl: 'https://github.com/AlecRobinGould/esp_now_auto_pairing.git/',
+  },
+  {
+    id: 4,
     title: 'Dynamic QR codes',
     description: 'A self-hosted website to generate and store dynamic QR codes.',
     image: 'https://github.com/AlecRobinGould/AntennasQRcodes/assets/95220293/0d21113d-6da1-42b5-a5d2-a89590468e24',
@@ -205,7 +214,7 @@ const projects = [
     liveUrl: 'http://qr.emss.co.za:8213/',
   },
     {
-    id: 4,
+    id: 5,
     title: 'Additive Manufacturing of Antennas',
     description: 'A process to resin print (SLA), and metalize the surface of an antenna.',
     image: 'https://github.com/user-attachments/assets/bd33c01d-919a-42af-a2ee-38e0898938bb',
@@ -214,7 +223,7 @@ const projects = [
     liveUrl: 'https://github.com/AlecRobinGould/Honours-public/blob/main/Additive%20Manufacturing%20in%20Ka-band%20Antenna%20Engineering.pdf',
   },
   {
-    id: 5,
+    id: 6,
     title: 'RSC Integration Automation',
     description: 'SaaP developed to automate a tedious process of integrating software/updates.',
     image: 'https://github.com/EMSS-Antennas/RSC-S-band-Intergration-Automation-Public/assets/95220293/bb226040-a19f-42ee-a4ea-45c2a11495ad',
@@ -223,7 +232,7 @@ const projects = [
     liveUrl: 'https://github.com/EMSS-Antennas/RSC-S-band-Intergration-Automation-Public/assets/95220293/5b8887be-2d01-4ffa-b22c-54c3176d1a86',
   },
   {
-    id: 6,
+    id: 7,
     title: 'S-Parameter Viewer',
     description: 'Application developed to visualize and obtain metrics such as average attenuation, etc.',
     image: 'https://github.com/AlecRobinGould/Scattering-parameter-viewer/assets/95220293/85676b08-cc6e-496e-b5ac-db740fb02091',

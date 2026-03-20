@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ReactNode, useEffect } from 'react';
 import { theme } from '../../styles/theme';
 import { useKeyboardNavigation } from '../../hooks/useKeyboardNavigation';
+import { FloatingNav } from '../navigation/floatingNav';
 
 interface LayoutProps {
   children: ReactNode;
@@ -213,7 +214,7 @@ export const Layout = ({ children }: LayoutProps) => {
       <Main id="main-content" role="main" tabIndex={-1}>
         {children}
       </Main>
-
+      <FloatingNav />
       <Footer role="contentinfo">
         <div className="container">
           <p>© {new Date().getFullYear()} Alec Robin Gould. All rights reserved.</p>
